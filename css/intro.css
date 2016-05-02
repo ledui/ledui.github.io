@@ -1,0 +1,195 @@
+.character {
+    font-size: 50px;
+    text-align: center;
+}
+
+.figure {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caption {
+    width: 280px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: medium;
+    border-right-width: medium;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.word-row {
+    margin-left: auto;
+    margin-right: auto;
+    display:table;
+}
+
+.square-tl {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: medium;
+    border-right-width: thin;
+    border-top-width: medium;
+    border-bottom-width: thin;
+    float:left;
+}
+
+.square-tr {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: thin;
+    border-right-width: medium;
+    border-top-width: medium;
+    border-bottom-width: thin;
+    float:left;    
+}
+
+.square-l {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: medium;
+    border-right-width: thin;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    float:left;
+}
+
+.square-r {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: thin;
+    border-right-width: medium;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    float:left;
+}
+
+.square-bl {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: medium;
+    border-right-width: thin;
+    border-top-width: thin;
+    border-bottom-width: medium;
+    float:left;
+}
+
+.square-br {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: thin;
+    border-right-width: medium;
+    border-top-width: thin;
+    border-bottom-width: medium;
+    float:left;    
+}
+
+.square-m {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: thin;
+    border-right-width: thin;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    float:left;    
+}
+
+.square-tm {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: thin;
+    border-right-width: thin;
+    border-top-width: medium;
+    border-bottom-width: thin;
+    float:left;    
+}
+
+.square-bm {
+    width: 50px;
+    height: 50px;
+    border-style: solid;
+    border-left-width: thin;
+    border-right-width: thin;
+    border-top-width: thin;
+    border-bottom-width: medium;
+    float:left;
+}
+
+
+.square0 {
+    border-top-width: medium;
+    border-bottom-width: thin;
+}
+
+.example {
+    margin-left:auto;
+    margin-right:auto;
+    display:center;
+}
+
+.square1 {
+    border-top-width: thin;
+    border-bottom-width: thin;
+}
+
+.square2 {
+    border-top-width: thin;
+    border-bottom-width: thin;
+}
+
+.square3 {
+    border-top-width: thin;
+    border-bottom-width: medium;
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
+
+.green {
+    background: green;
+}
+
+.purple {
+    background: purple;
+}
+
+.pink {
+    background: pink;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.orange {
+    background: orange;
+}
+
+.cyan {
+    background: cyan;
+}
+
+.white {
+    background: white;
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any
+    other head content must come *after* these tags -->
+    <title>Introduction To Green Code</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../intro.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
+    and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Introduction to Green Code</h1>
+      <br />
+      <p>This document explains the basics of Green Code; if you
+        already know about it, you might want to skip the text and
+        just scroll down to look at the pictures!</p>
+
+      <h2>Why is it called Green Code?</h2>
+
+      <p>The primary reason is, of course, because of its potential use
+        in environmentally friendly low-power applications, as mentioned
+        below, and the obvious Matrix allusion.</p>
+
+      <p>However, as we shall see, the green square is the most
+        important control code, so there is a lot of the colour green in
+        Green code.</p>
+      
+      <h2>What is Green Code?</h2>
+      <div class="row">
+        <div class="col-md-1">
+          <div class="row" id="row5"></div>
+        </div>
+        <div class="col-md-11">
+          <p>Green Code is a visual language with each character
+            represented by four coloured squares in a 4x1 grid (like the
+            long thin block in the video game Tetris).</p>
+
+          <p>Green Code is particularly aimed at the kind of 8x8 or 8x4
+            LED Grids that are commonly connected to single board computers
+            or micro-controllers, but you can also use it on a normal
+            computer using your normal screen.</p>
+      
+          <p>There is also an alternative black and white representation
+            which uses a 4x2 grid for each character. Obviously this is 50%
+            less space efficient, but it can be used on single colour
+            (i.e. on and off) LED grids without having to learn a second
+            visual language.</p>
+
+          <p>Green Code provides a lot of characters, which aim to
+            more or less represent the first block of characters in
+            Unicode. This first block is formally known as ISO/IEC
+            8859-1 but is commonly referred to as 'Latin alphabet
+            no. 1' or as 'Western European languages'. This block
+            provides the characters needed for 28 languages and
+            partial support for 13 more.</p>
+
+          <p>Obviously, you only need to learn the characters useful for
+            your own language(s). If like me your primary language is
+            English, you only really need to learn the 26 letters, 10 digits
+            and a few punctuation characters.</p>
+          
+          <p>The rest of this simple introductory document focuses on
+            English. If your language is not English, I would love you to
+            make your own introduction to Green Code that focuses on the
+            characters you need. Also feedback or suggestions on the use of
+            Green Code in other languages will be gratefully accepted. I
+            would also love to hear about any similar efforts in non-Latin
+            languages (e.g. Chinese), it would be pretty interesting to see
+            how you could encode those in LED form.</p>
+        </div>
+          
+      <h2>Why was Green Code Invented?</h2>
+      
+      <p>I realised that my Raspberry Pi Sense HAT, an 8x8 LED Grid,
+        used 25 times less power than my little DSI touchscreen and
+        50 times less power than my HDMI monitor.</p>
+      <p>Having spent my whole childhood playing Tetris, my brain is
+        already trained to read coloured blocks from a grid. Therefore
+        I decided to see how far I could push the concept of using an
+        LED grid. Could it replace a monitor in my house, saving
+        electricity and thus helping the planet?</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="figure"><img src="images/sensehat1.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>This was my first attempt at an LED grid based
+              notification application.</p>
+            <p>It aimed to show me a visual summary of my
+              communications while away from my main desk, e.g. on the
+              breakfast table, etc.</p>
+            <p>The symbol in the top right is telling me that today
+            it will be cloudy with rain.</p>
+            <p>However, I can cheer up because the two columns of
+              stacked dots are telling me I have five emails in my
+              Gmail and three Twitter notifications.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="images/sensehat2.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>The next logical step was to be able to read email subjects,
+            tweets, etc on the device. So when I selected a dot using a
+            joystick, it would scroll the text across the screen using
+            large letters.</p>
+          
+          <p>This however was slightly slow and fragile, i.e. if in my
+            impatience, I got bored and moved my gaze away, I could
+            easily lose a few characters and have to wait until it had
+            finished scrolling and then start it scrolling all over
+            again.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="images/sensehat3.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>What I really wanted was a way to have several
+            characters on screen at one time. I realised that if each
+            character was encoded in a vertical 4 square block, I
+              could see up to 16 characters on screen at once.</p>
+            <p>Later, come back and see if you can read this message.</p> 
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="figure"><img src="images/spock.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>Green Code clearly takes off, especially in the 23rd
+            Century. Enterprise science officer and first officer
+            Spock, has all the information he needs from four colour
+            matrices. No fancy pictures, no talking robots, no
+            holograms.</p>
+            <p>Incidentally, Matt Jefferies, art director and
+            production designer on the original Star Trek series was a
+            distinguished World War II aviator, and took the concept
+            of 'space navy' seriously in his designs, using military
+            technology and design principles.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="images/predator.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>In the Predator movies, the creatures control their
+            masks and weapons using these four little panels. We don't
+            want to spoil the plot, but we can say it is the last
+            display a Predator will ever need.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="images/matrix.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>Green Rain from the Matrix films, beautiful if somewhat
+            slightly impractical. These days, even nano can colour
+            source code.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Why use Green Code?</h2>
+      
+      <p>Obviously, this is a whimsical endeavour, and is meant to
+      be fun. A load of weird lights is an entertaining but very niche
+      way to read. If you didn't leave at the sight of images of Spock
+      and the Matrix above, then you probably are the right person to be
+      here.</p>
+
+      <p>It might be difficult to read War and Peace with this format,
+        but it works quite well for: "rain 20 degrees, meeting at 11,
+        don't forget the milk" or whatever you want to be notified
+        about.</p>
+
+      <p>Building my low-power grid based UI is a work in progress and
+        it is somewhat off topic to go into further detail
+        here. However, if you find a use for Green Code or build an
+        application that uses Green Code, I would love to hear about
+        it.</p>
+      
+      <h2>What are the basics?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row" id="basics-0"></div>
+          <p>The character shown above represents a space. It
+            is four blank squares. A blank square represents an LED
+            turned off, they are white here because this web page
+            happens to white; if the background of this page was
+            black, these blank squares would be black.</p>
+        </div>
+        <div class="col-md-4">
+          <div class="row" id="basics-1"></div>
+          <p>This is the letter e. It has one blue square (and three off
+            squares). The colour blue represents dark or short (aka dot/dit).</p>
+        </div>
+        <div class="col-md-4">
+          <div class="row" id="basics-2"></div>
+          <p>This is the letter t. It has one red square (and three off
+            squares). The colour red represents light or long (aka dash/dah).</p>       
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row" id="basics-3"></div>
+          <p>Now blue-red or (or short-long or dit-dah) is a. As you
+            may have already noticed, the English characters are based
+            on morse code.</p>
+          <p>Extra characters such as digits were fairly sensible in
+            Morse's original 1844 code, but when it became standardised
+            in 1865, it became the proverbial horse designed by
+            committee.</p>
+          <p>The digits and punctuation characters got longer and
+            longer. The problem being, that when you break the 4
+            character max-length, a longer character risks being
+            mistakenly decoded instead as two constituent characters,
+            e.g. the word 'he' and the number 5 are both five dots
+            (blue).</p>
+        </div>
+        <div class="col-md-4">
+          <div class="row center-block" id="rowsos"></div>
+
+          <p>This ambiguity would be compounded in Green Code as we use
+          spaces between words, not between characters.</p>
+          <p>Above is a word in Green Code, as you can see, characters
+          are built up vertically and then combined horizontally to
+          form words.</p>
+            
+        </div>
+      <div class="col-md-4">
+        <img src="/images/picard.png" width=300 height=300 />
+        <p>Therefore in Green Code, the character length is always
+        four, and extra colours are used to extend the character
+        set. Mostly these extra colours are used in the top position, so you
+        can treat them like 'control characters' to distinguish
+          between different blocks of characters.</p>
+        <p>So if a character starts with blue or red, it is probably a
+        basic letter. If a character starts with green, it is probably
+          a digit and so on.</p>
+        <p>There are actually exceptions to this rule, but don't run
+        before you can walk.</p>
+      </div>       
+      </div>
+ 
+
+      
+      <h2>Digits</h2>
+      <div class="row" id="digits-row"></div>
+      <br />
+          <p>Digits all start with a green square. If you know Roman
+            numerals, the three lower squares are very simple.</p>
+          
+          <p>If you look at the character 0, it has a green square and
+            three blank squares.</p>
+            
+          <p>Now look at the character 1. It has a blue square in second
+            position. You can think of it like I in Roman numerals.</p>
+          
+          <p>Now look at the character 5. It has a red square in second
+            position. You can think of it like V in Roman numerals.</p>
+          
+          <p>8 is the one that doesn't immediately translate to Roman,
+            however I like to pretend there is another (hidden) red square
+            below it, i.e. IIVV, and V+V=X so IIX which is 8 (correct
+            Roman 8 is VIII of course, but that doesn't fit either).</p>
+
+            
+          <h2>Letters</h2>
+          <p>Here are the English characters in Green Code. Like in
+          Morse Code, there is no upper and lower case, only one case,
+          which for uniformity, we always represent in letters as
+            lower case. </p>
+          <p>For most of human history, they did without an upper and
+          lower distinction, you won't miss them. Also note that the
+          alphabet is typically not the best layout for
+          learning.</p></p>
+          <div class="row" id="letters-0"></div>
+          <div class="row" id="letters-1"></div>
+          <div class="row" id="letters-2"></div>
+      
+</div>
+
+        
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <!-- Handlebars -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <script id="greencode-template" type="text/x-handlebars-template">
+      <div class="{{#if wide}}col-md-12{{else}}col-md-1{{/if}}">
+        <div class="character">{{character}}</div>
+        {{#each colours}}
+        <div class="square {{this}} square{{@index}}"></div>
+        {{/each}}
+      </div>      
+    </script>
+
+    <script id="greenword-template" type="text/x-handlebars-template">
+      <div class="{{#if wide}}col-md-12{{else}}col-md-1{{/if}}">
+        <div class="character">{{word}}</div>
+        {{#each rows}}
+        <div class="row word-row">
+          {{#each this as |cell|}}
+          <div class="square-{{cell.pos}} {{cell.colour}}"></div>
+          {{/each}}
+        </div> <!-- end row -->
+        {{/each}}        
+      </div>
+    </script>
+
+    <!-- Green code -->
+    <script src="../js/greencode.js"></script>
+    <script src="../js/intro.js"></script>
+    
+  </body>
+</html>
