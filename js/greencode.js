@@ -1,5 +1,5 @@
 var SHORT_CODE = {
-    "\n": "._._",
+    "\n": ".-.-",
     " ": "    ",
     "!": "---.",
     "\"": "&-- ",
@@ -118,6 +118,12 @@ var COLOURS = {
     '=': "cyan"
 };
 
+var WHITE_CODE = {
+    ' ': ["off", "off"],
+    '.': ["white", "off"],
+    '-': ["off", "white"],
+    '#': ["white", "white"]
+}
 
 
 var GREEN = (function () {
@@ -125,6 +131,10 @@ var GREEN = (function () {
         display_character: function (character, row_no, wide, altcaption, title) {
             var colours = GREEN.get_green_code(character)
             GREEN.create_cell(character, colours, row_no, wide, altcaption, title)
+        },
+        display_white_character: function (character, row_no, wide, altcaption, title) {
+            var colours = GREEN.get_white_code(character)
+
         },
         get_green_code: function(character) {
             var short_code = SHORT_CODE[character]
@@ -139,6 +149,44 @@ var GREEN = (function () {
             }
             return colours;
         },
+        get_white_code: function(character) {
+            var short_code = SHORT_CODE[character]
+            if (!short_code) {
+                console.log(character);
+                console.log("Hippie");
+            }
+            console.log(character);
+            console.log(short_code)
+            var i, colour;
+            var rows = [
+                [{pos: 'tl'}, {pos: 'tr'}],
+                [{pos: 'l'},  {pos: 'r'}],
+                [{pos: 'l'},  {pos: 'r'}],
+                [{pos: 'bl'}, {pos: 'br'}]
+            ]
+            for (var i = 0; i < 4; i++) {
+                colour = WHITE_CODE[short_code[i]];
+                rows[i][0].colour = colour[0];
+                rows[i][1].colour = colour[1];
+            }
+            return rows;
+        },
+        display_white: function(character, identifier, wide, altcaption, title) {
+            var contexts, rows, i, j;
+            rows = GREEN.get_white_code(character);
+            if (altcaption) {
+                character = altcaption
+            }
+            var context = {'rows': rows,
+                           'character': character,
+                           'title': title}
+            var source   = $("#whiteword-template").html();
+            var template = Handlebars.compile(source);
+            var html = template(context);
+            element = $('#' + identifier);
+            element.append(html);
+        },
+
         get_green_word: function (word) {
             var i, len, characters, colour, colours, context, character;
             len = word.length;

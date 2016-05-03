@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any
     other head content must come *after* these tags -->
-    <title>The LED UI Project - Making brighter applications</title>
+    <title>White Code Dictionary</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="../intro.css">
+    <link rel="stylesheet" href="../css/intro.css">
+    <link rel="stylesheet" href="../css/white.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
     and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,33 +24,24 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <h1>LED UI Project</h1>
-      <h2>Making Brighter Applications</h2>
-      <ul>
-        <li><a href="/introduction/">Introduction</a></li>
-      </ul>
-      
-      <h2>Ledgrid module</h2>
-      <p>The ledgrid module is useful for developing LED applications
-      on your computer.</p>
-      <ul>
-        <li><a href="https://pypi.python.org/pypi/ledgrid">Pypi page</a>
-        <li><a href="https://github.com/zeth/ledgrid">github project</a></li>
-      </ul>
+    <div class="container-fluid">
+      <h1>White Code Dictionary</h1>
 
-      <h2>Green Code</h2>
-      <p>Green Code is an LED based textual representation that aims to be useful in LED applications.</p>
-      <ul>
-        <li><a href="/green-code-intro/">Introduction to Green Code</a></li>
-        <li><a href="/dictionary/">Green Code Dictionary</a> - all of the currently defined characters in standard (RGB) form of the language. </li>
-        <li><a href="/hundred/">Green Code Hundred words</a> - Here is a list of 100 common English words, many of which are short. I seem to find that long words can be easier to read since after decoding a few letters, you can employ your 'hangman' skills.</li>
-        <li><a href="/devices/">Device list</a> - different hardware and notes about them</li>
-        <li><a href="/whitecode/">White Code</a> - Alternate one colour format</li>
-        <li>Greco - Green Code learning game.</li>
+      <h2>Letters</h2>
+      <div class="row center-block" id="letters"></div>
 
+      <h2>Punctuation</h2>
+      <div class="row" id="whitespace"></div>
 
-      </ul>
+      <div class="row center-block" id="extra-core"></div>
+
+      <h2>Numbers</h2>
+      <div class="row" id="numbers"></div>
+
+      <h2>Symbols</h2>
+      <div class="row" id="symbols"></div>
+      <br />
+
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -63,6 +55,23 @@
     <!-- Handlebars -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <script id="whiteword-template" type="text/x-handlebars-template">
+      <div class="{{#if wide}}col-md-12{{else}}col-md-2{{/if}}">
+        <div class="character">{{character}}</div>
+        {{#each rows}}
+        <div class="row word-row">
+          {{#each this as |cell|}}
+          <div class="square-{{cell.pos}} {{cell.colour}}"></div>
+          {{/each}}
+        </div> <!-- end row -->
+        {{/each}}
+        </div>
+    </script>
+
+    <!-- Green code -->
+    <script src="../js/greencode.js"></script>
+    <script src="../js/white.js"></script>
 
   </body>
 </html>

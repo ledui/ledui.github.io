@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any
+    other head content must come *after* these tags -->
+    <title>Introduction to the LED UI Project</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/intro.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
+    and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Introduction to the LED UI Project</h1>
+
+      <h2>About</h2>
+      <p>This website is about making applications for the kind of 8x8
+      or 8x4 LED Grid <a href="/devices/">devices</a> that are
+      available for single board computers or micro-controllers, but
+      you can also them on a normal computer using your normal screen,
+      for example by
+      using <a href="https://pypi.python.org/pypi/ledgrid">ledgrid</a>
+      to emulate an LED grid.</p>
+
+      <p>Obviously, this is a whimsical endeavour, and is meant to be
+      fun. A load of weird lights is an entertaining but very niche
+      way to read and interact with a computer.</p>
+
+      <p>It might be difficult to write a sequel to read War and Peace
+        with this format, but it works quite well for: "rain 20
+        degrees, meeting at 11, don't forget the milk" or whatever you
+        want to be notified about.</p>
+
+      <p>As well as notifiers, an LED grid application could be a nice
+      music players, a game, anything you can imagine.</p>
+
+      <p>If you are making an application for LEDGrids, I would love
+        to hear about it.</p>
+
+
+
+      <h2>Why are we here?</h2>
+
+      <p>I realised that my Raspberry Pi Sense HAT, an 8x8 LED Grid,
+        used 25 times less power than my little DSI touchscreen and
+        50 times less power than my HDMI monitor.</p>
+      <p>Having spent my whole childhood playing Tetris, my brain is
+        already trained to read coloured blocks from a grid. Therefore
+        I decided to see how far I could push the concept of using an
+        LED grid. Could it replace a monitor in my house, saving
+        electricity and thus helping the planet?</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="figure"><img src="/images/sensehat1.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>This was my first attempt at an LED grid based
+              notification application.</p>
+            <p>It aimed to show me a visual summary of my
+              communications while away from my main desk, e.g. on the
+              breakfast table, etc.</p>
+            <p>The symbol in the top right is telling me that today it
+              will be cloudy with rain (i.e. it is actually meant to
+              be a little picture of a rain cloud).</p>
+            <p>However, I can cheer up because the two columns of
+              stacked dots are telling me I have five emails in my
+              Gmail and three Twitter notifications.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="/images/sensehat2.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>The next logical step was to be able to read email subjects,
+            tweets, etc on the device. So when I selected a dot using a
+            joystick, it would scroll the text across the screen using
+            large letters.</p>
+
+          <p>This however was slightly slow and fragile, i.e. if in my
+            impatience, I got bored and moved my gaze away, I could
+            easily lose a few characters and have to wait until it had
+            finished scrolling and then start it scrolling all over
+            again.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="/images/sensehat3.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>What I really wanted was a way to have several
+            characters on screen at one time. I realised that if each
+            character was encoded in a vertical 4 square block, I
+              could see up to 16 characters on screen at once.</p>
+            <p>Later, come back and see if you can read this message.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="figure"><img src="/images/spock.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>LED UI clearly takes off, especially in the 23rd
+            Century. Enterprise science officer and first officer
+            Spock, has all the information he needs from four colour
+            matrices. No fancy pictures, no talking robots, no
+            holograms.</p>
+            <p>Incidentally, Matt Jefferies, art director and
+            production designer on the original Star Trek series was a
+            distinguished World War II aviator, and took the concept
+            of 'space navy' seriously in his designs, using military
+            technology and design principles.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="/images/predator.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>In the Predator movies, the creatures control their
+            masks and weapons using these four little panels. I don't
+            want to spoil the plot, but we can say it is the last
+            display a Predator will ever need.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="figure"><img src="/images/matrix.png" width=300 height=300 /></div>
+          <div class="caption">
+            <p>Green Rain from the Matrix films, beautiful if somewhat
+            slightly impractical. These days, even nano can colour
+            source code.</p>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <!-- Handlebars -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <script id="greencode-template" type="text/x-handlebars-template">
+      <div class="{{#if wide}}col-md-12{{else}}col-md-1{{/if}}">
+        <div class="character">{{character}}</div>
+        {{#each colours}}
+        <div class="square {{this}} square{{@index}}"></div>
+        {{/each}}
+      </div>
+    </script>
+
+    <script id="greenword-template" type="text/x-handlebars-template">
+      <div class="{{#if wide}}col-md-12{{else}}col-md-1{{/if}}">
+        <div class="character">{{word}}</div>
+        {{#each rows}}
+        <div class="row word-row">
+          {{#each this as |cell|}}
+          <div class="square-{{cell.pos}} {{cell.colour}}"></div>
+          {{/each}}
+        </div> <!-- end row -->
+        {{/each}}
+      </div>
+    </script>
+
+    <!-- Green code -->
+    <script src="../js/greencode.js"></script>
+    <script src="../js/intro.js"></script>
+
+  </body>
+</html>
