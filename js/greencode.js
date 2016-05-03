@@ -122,12 +122,15 @@ var COLOURS = {
 
 var GREEN = (function () {
     return {
-        display_character: function (character, row_no, wide) {
+        display_character: function (character, row_no, wide, altcaption, title) {
             var colours = GREEN.get_green_code(character)
-            GREEN.create_cell(character, colours, row_no, wide)
+            GREEN.create_cell(character, colours, row_no, wide, altcaption, title)
         },
         get_green_code: function(character) {
             var short_code = SHORT_CODE[character]
+            if (!short_code) {
+                console.log(character);
+            }
             var i, colour;
             var colours = [];
             for (var i = 0; i < 4; i++) {
@@ -156,6 +159,14 @@ var GREEN = (function () {
             len = contexts.length;
             // There are only ever 4 lights
             rows = [[], [], [], []];
+            // Quickly get rid of one character words
+            if (len == 1) {
+                rows[0].push({colour: contexts[0].colours[0], pos: 'tlr'})
+                rows[1].push({colour: contexts[0].colours[1], pos: 'lr'})
+                rows[2].push({colour: contexts[0].colours[2], pos: 'lr'})
+                rows[3].push({colour: contexts[0].colours[3], pos: 'blr'})
+                return rows;
+            }
             // Turn it around to row and cells
             for (i = 0; i < len; i++) {
                 for  (j = 0; j < 4; j++) {
@@ -169,7 +180,7 @@ var GREEN = (function () {
                         pos = 'br';
                     } else if (i == 0) {
                         pos = 'l';
-                    } else if (i == (len + 1)) {
+                    } else if (i == (len - 1)) {
                         pos = 'r';
                     } else if (j == 0) {
                         pos = 'tm';
@@ -196,62 +207,22 @@ var GREEN = (function () {
             element = $('#' + identifier);
             element.append(html);
         },
-        create_cell: function(character, colours, identifier, wide) {
+        create_cell: function(character, colours, identifier, wide, altcaption, title) {
             if (character == ' ') {
                 character = "(space)";
             }
+            if (altcaption) {
+                character = altcaption;
+            }
             var context = {character: character,
                            colours: colours,
-                           wide:wide}
+                           wide:wide,
+                           title:title}
             var source   = $("#greencode-template").html();
             var template = Handlebars.compile(source);
             var html = template(context);
             var row = $('#' + identifier);
             row.append(html)
         },
-        setup_intro: function() {
-            GREEN.display_character('h', 'row5', true);
-            GREEN.display_character(' ', 'basics-0', true);
-            GREEN.display_character('e', 'basics-1', true);
-            GREEN.display_character('t', 'basics-2', true);
-            GREEN.display_character('a', 'basics-3', true);
-            GREEN.display_word('sos', 'rowsos', true);
-            GREEN.display_character('0', 'digits-row');
-            GREEN.display_character('1', 'digits-row');
-            GREEN.display_character('2', 'digits-row');
-            GREEN.display_character('3', 'digits-row');
-            GREEN.display_character('4', 'digits-row');
-            GREEN.display_character('5', 'digits-row');
-            GREEN.display_character('6', 'digits-row');
-            GREEN.display_character('7', 'digits-row');
-            GREEN.display_character('8', 'digits-row');
-            GREEN.display_character('9', 'digits-row');
-            GREEN.display_character('a', 'letters-0');
-            GREEN.display_character('b', 'letters-0');
-            GREEN.display_character('c', 'letters-0');
-            GREEN.display_character('d', 'letters-0');
-            GREEN.display_character('e', 'letters-0');
-            GREEN.display_character('f', 'letters-0');
-            GREEN.display_character('g', 'letters-0');
-            GREEN.display_character('h', 'letters-0');
-            GREEN.display_character('i', 'letters-0');
-            GREEN.display_character('j', 'letters-0');
-            GREEN.display_character('k', 'letters-0');
-            GREEN.display_character('l', 'letters-1');
-            GREEN.display_character('m', 'letters-1');
-            GREEN.display_character('n', 'letters-1');
-            GREEN.display_character('o', 'letters-1');
-            GREEN.display_character('p', 'letters-1');
-            GREEN.display_character('q', 'letters-1');
-            GREEN.display_character('r', 'letters-1');
-            GREEN.display_character('s', 'letters-1');
-            GREEN.display_character('t', 'letters-1');
-            GREEN.display_character('u', 'letters-1');
-            GREEN.display_character('v', 'letters-1');
-            GREEN.display_character('w', 'letters-2');
-            GREEN.display_character('x', 'letters-2');
-            GREEN.display_character('y', 'letters-2');
-            GREEN.display_character('z', 'letters-2');            
-        }
   };
 })();

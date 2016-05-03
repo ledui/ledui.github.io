@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any
     other head content must come *after* these tags -->
-    <title>Introduction To Green Code</title>
-
+    <title>Green Code - 100 common words</title>
+    
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="../intro.css">
+    <link rel="stylesheet" href="../css/intro.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
     and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,28 +23,10 @@
     <![endif]-->
   </head>
   <body>
-    <div class="container">
-      <h1>LED UI Project</h1>
-      <h2>Ledgrid module</h2>
-      <p>The ledgrid module is useful for developing LED applications
-      on your computer.</p>
-      <ul>
-        <li><a href="https://pypi.python.org/pypi/ledgrid">Pypi page</a>
-        <li><a href="https://github.com/zeth/ledgrid">github project</a></li>
-      </ul>
-
-      <h2>Green Code</h2>
-      <p>Green Code is an LED based textual representation that aims to be useful in LED applications.</p>
-      <ul>
-        <li><a href="/green-code-intro/">Introduction to Green Code</a></li>
-        <li><a href="/dictionary/">Green Code Dictionary</a> - all of the currently defined characters in standard (RGB) form of the language. </li>
-        <li><a href="/hundred/">Green Code Hundred words</a> - Here is a list of 100 common English words, many of which are short. I seem to find that long words can be easier to read since after decoding a few letters, you can employ your 'hangman' skills.</li>
-        <li><a href="/devices/">Device list</a> - different hardware and notes about them</li>
-        <li>Alternate one colour format</li>
-        <li>Greco - Green Code learning game.</li>
-
-
-      </ul>
+    <div class="container-fluid">
+      <h1>Green Code - 100 common words</h1>
+      <div class="row center-block" id="words"></div>
+      <br />
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -59,5 +41,30 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
+    <script id="greenword-template" type="text/x-handlebars-template">
+      <div class="col-md-4">
+        <div class="row">
+      
+          <div class="{{#if wide}}col-md-12{{else}}col-md-1{{/if}}">
+            <div class="character">{{word}}</div>
+            {{#each rows}}
+            <div class="row word-row">
+              {{#each this as |cell|}}
+              <div class="square-{{cell.pos}} {{cell.colour}}"></div>
+              {{/each}}
+            </div> <!-- end row -->
+            {{/each}}        
+          </div>
+          
+        </div>
+      </div>
+      
+    </script>
+
+    <!-- Green code -->
+    <script src="../js/greencode.js"></script>
+    <script src="../js/hundred.js"></script>
+    
   </body>
 </html>
+
