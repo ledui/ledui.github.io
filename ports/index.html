@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any
+    other head content must come *after* these tags -->
+    <title>LED UI Ports</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="../intro.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements
+    and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <h1>LED UI Ports</h1>
+      <p>In recent years we have become spoiled with exciting devices.</p>
+      <p>The main and only (so far) port being developed is in Python
+        on Linux due to the ease of development, but it can be
+        easily(ish) ported to other languages and platforms by anyone
+        who is dedicated enough to do it.</p>
+      <p>It will be quite a while until this first port is stable as
+        it is being developed as a hobby in spare time, however, we
+        are hoping that eventually even crazier people can make their
+        hobby porting LED UI to their favourite devices and operating
+        systems.</p>
+      <p>Also we are willing to add new platforms as core ports if
+        they prove themselves useful.</p>
+      <table class="table">
+        <tr>
+          <th>Port Name</th>
+          <th>Image</th>
+          <th>Comments</th>
+        </tr>
+        <tr>
+          <td>Linux</td>
+          <td><img src="/images/inspace.png" width="300" height="300" /></td>
+          <td>
+            <p>The initial and main port of LED UI is to Linux. Most
+              people are interested in the Raspberry Pi single board
+              computer (in its various form factors).</p>
+            <p>However, there are other small single board computers
+              that can run Linux. Also a desktop computer
+              can <a href="https://pypi.python.org/pypi/ledgrid/">emulate
+              an ledgrid.</a> and so run LED UI on a
+              monitor. Obviously that is not particularly power
+              efficient or portable, but is an easy place to
+              start.</p>
+        </tr>
+        <tr>
+          <td>ESP8266</td>
+          <td><img src="/images/esp8266.png" width="300" height="300" /></td>
+          <td>
+            <p>This is a interesting platform as it has a low power
+              micro-controller with a fairly generous amount of RAM
+              and has built-in Wifi. The MicroPython folks are aiming
+              to support it and it also supports other easy languages
+              such as C and Lua.</p>
+            <p>We are watching this platform and hope to test LED UI
+              on it, especially if we can prototype an initial version
+              in MicroPython.</p>
+        </tr>
+        <tr>
+          <td>BBC Microbit</td>
+          <td><img src="/images/bbcmicrobit.png" width="300" height="300" /></td>
+          <td>
+            <p>A great device, and I got mine free for volunteering to
+              teach teachers how to use the Microbit at an
+              event. Obviously 2 characters at a time removes some of
+              the efficiency of Green Code but it is still fun.</p>
+            <p>The form factor and design are excellent. While this
+              cannot support the LED Menu; loading a single
+              small game or application is certainly possible.</p>
+            <p>This platform is one to watch, as if they bring out
+              future versions with higher specifications then it will
+              become much more useful.</p>
+            <p>It has two programmable buttons, but the accelerometer can
+              be used for more input.</p>
+            <p>I used MicroPython, which really brings the device
+            alive.</p>
+        </tr>
+        </tr>
+      </table>
+
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+    <!-- Handlebars -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+  </body>
+</html>

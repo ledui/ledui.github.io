@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any
     other head content must come *after* these tags -->
     <title>Input devices</title>
-    
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -25,7 +25,14 @@
   <body>
     <div class="container">
       <h1>Input Devices</h1>
-      <p>LED UI setup needs to support user input, keyboards are bit boring. </p>
+      <p>For user input, LED UI is based around having a joystick and
+        buttons.</p>
+      <p>The simplest thing is to just use an old PS3 controller but
+        anything that works with Linux can probably be made to work with
+        LED UI, for example there are some small and pocket-able USB
+        gamepads being made or you can soldier your own buttons using
+        Raspberry Pi GPIO. In this page, I list some common approaches.</p>
+
       <table class="table">
         <tr>
           <th>Device name</th>
@@ -37,37 +44,113 @@
           <td>Sense HAT Joystick</td>
           <td><img src="/images/sensehat-list.png" width="300" height="300" /></td>
           <td>5</td>
-          <td>Four directions and a central push down button</td>
+          <td>
+            <p>Four directions and a central push down button. LED UI
+            is easier with a few more buttons; however, it will work
+            with just this one button, so you can start with this one
+            button and if you grow to like LED UI, get some more buttons
+              later.</p>
+            <p>The Sense HAT only uses two pins, so there are plenty
+            of pins left for adding extra buttons. This is how the
+            next example works.</p>
+
+          </td>
         </tr>
         <tr>
           <td>AstroPi 3D printed case</td>
-          <td><img src="/images/astropi.png" width="300" height="300" /></td>
+          <td><img src="/images/astropi.png" width="300" height="300"
+          /></td>
           <td>11</td>
-          <td>11 buttons (including 5 button joystick above).</td>
+          <td>
+            <p>11 buttons (including 5 button joystick above). This is
+              the ultimate in self contained space style LED use.</p>
+
+            <p>Not exactly the quickest way to get started as it
+              involves soldering and bending GPIO headers etc, so you
+              might want to use a gamepad (see below) first.</p>
+          </td>
         </tr>
         <tr>
-          <td>Sixaxis (PS3 Compatible Controller</td>
+          <td>Official PS3 Controller</td>
+          <td><img src="/images/official-ps3.png" width="300"
+          height="300" /></td>
+          <td>25</td>
+          <td>
+            <p>25 buttons/stick directions, but you can also use
+              diagonals to emulate 40 (this applies to the others
+              below also). Using a gamepad, especially if you have an
+              unloved one in the cupboard already, is a quick way to
+              give your LED device a load of buttons.</p>
+
+            <p>The official PlayStation 3 controller uses Bluetooth,
+            which is built into the Raspberry 3. Other models of Pi
+              need a Bluetooth adaptor, but they can be quite small.</p>
+
+            <p>PS3 controllers are widely available on auction sites,
+              as well as in second-hand shops, etc.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>Third Party PS3 Compatible Controller</td>
           <td><img src="/images/sixaxis.png" width="300" height="300" /></td>
-          <td>Loads</td>
-          <td>Cheap Chinese PS3 controllers are cheap, easily
-          available and well supported by Linux. They provide a quick
-          way to get AstroPi type setup.</td>
+          <td>25</td>
+          <td>
+            <p>Back in the day when PS3 official controllers were
+              expensive, third-party controllers were widely used.</p>
+
+            <p>This one came from the UK shop called Argos and uses RF
+              instead of Bluetooth, it came with its own (4-5 cm long)
+              receiver USB dongle.</p>
+
+            <p>I have this one and it happens to work. I cannot speak
+              for all third-party controllers. Until you plug it in, it
+              may be hard to figure out what it actually is and if it
+              has a Linux driver. The company out in China probably only
+              tested it with a Playstation, so may have introduced some
+              subtle incompatibility that stops it working in Linux.</p>
+
+            <p>It is a bit of a punt. So if you have a third-party
+              controller already, use it, but it is not worth buying a
+              third-party one unless it is substantially cheaper than
+              you can get an official PS3 controller for, and PS3
+              controllers are a third of the price they used to
+              be.</p>
+
+          </td>
         </tr>
         <tr>
-          <td>BBC Microbit</td>
-          <td><img src="/images/bbcmicrobit.png" width="300" height="300" /></td>
-          <td>2</td>
-          <td>Two programmable buttons, but accelerometer can be used like buttons.</td>
+          <td>360 Controller</td>
+          <td><img src="/images/360-controller.png" width="300" height="300" /></td>
+          <td>25</td>
+          <td>
+            <p>Comes in a wired and a wireless version. The former
+            just plugs into a USB socket, the latter uses a
+            proprietary RF format which needs a "Wireless Gaming
+            Receiver for PC" which plugs in your device's USB
+            socket.</p>
+            <p>360 controller is not quite as cheap as the PS3 ones,
+            but otherwise comparable to it.</p></td>
         </tr>
 
+        <tr>
+          <td>Keyboard</td>
+          <td><img src="/images/cursor.png" width="300" height="300" /></td>
+          <td>105</td>
+          <td>
+            <p>LED UI is about fun; keyboards are about work. However,
+              you can use cursor keys as your joystick.</p>
+            <p>Of course, there are some cool little Bluetooth
+            keyboards available for portable use.</p>
+          </td>
+        </tr>
       </table>
 
-      
+
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
             integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
@@ -79,4 +162,3 @@
 
   </body>
 </html>
-
